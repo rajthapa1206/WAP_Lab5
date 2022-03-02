@@ -27,7 +27,7 @@ console.log("The character " + letter + " is " + " a vowel:" + isVowel(letter));
 const numbers = [1,2,3,4,5,6];
 function sum(numbers){
 	let sum = 0;
-  for(const n of numbers){
+  for(const n in numbers){
   	sum += n;
   }
   return sum;
@@ -37,7 +37,7 @@ console.log("The sum of numbers in " + numbers + " is " + sum(numbers));
 // #4 function to find out the multiplication in array of numbers
 function multiply(numbers){
  	let prod = 1;
-  for (const n of numbers){
+  for (const n in numbers){
   	prod *= n;
   }
   return prod;
@@ -60,7 +60,7 @@ console.log("The reverse of " + word + " is " + reverse(word));
 // #6 function to find out the length of longest word in an array
 function findLongestWord(wordArray){
   let maxLength = 0;
-  for(const word of wordArray){
+  for(const word in wordArray){
   	maxLength = (maxLength > word.length) ? maxLength : word.length;
   }
   return maxLength;
@@ -73,7 +73,7 @@ const n = 7;
 function filterLongWords(wordArray, n){
 	let i = 0;
   let longWordsArray = [];
-  for(const word of wordArray){
+  for(const word in wordArray){
   	if (word.length > n){
     	longWordsArray[i] = word;
       i++;
@@ -145,3 +145,22 @@ const length = 5;
 const j = 0;
 const k = 1;
 printFibo(length, j, k);
+
+
+
+function setDateAndTime(){
+    setInterval(getDateAndTime, 1000)
+}
+
+// #Get clock 
+function getDateAndTime(){
+  let date = new Date();
+  let y = date.getFullYear();
+  let m = date.getMonth() + 1;
+  let d = date.getDate();
+  let h = date.getHours();
+  let mi = date.getMinutes();
+  let s = date.getSeconds();
+  document.getElementById("dateAndTime").innerHTML = y + '-' + m + '-' + d + ' ' + h + ':' + mi + ':' + s;
+}
+setDateAndTime();
