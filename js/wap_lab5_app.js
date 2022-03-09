@@ -1,3 +1,4 @@
+
 // #1 function to find out max between 2 numbers
 function max(a, b){
 return (a > b) ? a : b;
@@ -51,7 +52,6 @@ function reverse(word){
     let reverse = [];
     for (let i = 0; i < length; i++){
         reverse.push(word.charAt(length - i - 1));
-  	    //reverse[i] = word.charAt(length - i - 1);
     }
     return reverse.toString().replaceAll(',','');
 }
@@ -98,14 +98,13 @@ console.log("The odd numbers in an array of " + numbers + " are " + printOddNumb
 // #10 function to find the sum of squares of even numbers in an array
 function computeSumOfSquaresOfEvensOnly(numbers){
     return numbers.filter(numbers => numbers % 2 == 0).
-    reduce((sumOfSquaresOfEven, numbers, array) => sumOfSquaresOfEven + (numbers * numbers),0);
+    reduce((sumOfSquaresOfEven, numbers) => sumOfSquaresOfEven + (numbers * numbers),0);
 }
 console.log("The sum of squares of even numbers in an array of " + numbers + " are " + computeSumOfSquaresOfEvensOnly(numbers)); 
 
 // #11 function to find sum and product of numbers in an array using reduce
 function sumFunc(numbers){
-  return numbers.
-  reduce((sum, numbers) => sum + numbers);
+  return numbers.reduce((sum, numbers) => sum + numbers);
 }
 console.log("The sum of numbers in an array of " + numbers + " are " + sumFunc(numbers));
 function multiplyFunc(numbers){
